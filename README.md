@@ -1,3 +1,4 @@
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=18169068)
 # Scanner and Loops Practice
 
 Welcome to the Scanner and Loops practice assignment! In this exercise, you'll apply what you've learned about using Scanner for input and while loops in Java to solve three different programming challenges.
