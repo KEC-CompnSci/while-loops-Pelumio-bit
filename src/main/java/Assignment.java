@@ -1,5 +1,5 @@
 
-import java.util.Scanner;
+iimport java.util.Scanner;
 
 public class Assignment {
     // DO NOT MODIFY THIS SCANNER
@@ -7,11 +7,14 @@ public class Assignment {
     public static final Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) {
-      String repeated = repeatWord("", 0);
-      System.out.println(repeated);
-      String pyramid = createPyramid(0);
-      String FizzBuzz = countTo(3);
-      
+        String repeated = repeatWord("hello", 3);
+        System.out.println(repeated);
+        
+        String pyramid = createPyramid(3);
+        System.out.println(pyramid);
+        
+        String fizzBuzz = countTo(6);
+        System.out.println(fizzBuzz);
     }
     
     /**
@@ -20,14 +23,17 @@ public class Assignment {
      * Example: word="hello" times=3 → "hello hello hello"
      */
     public static String repeatWord(String word, int times) {
-       
-        // TODO: Implement this method
-        // Use a while loop to build a string that repeats the word
-        // Words should be separated by single spaces
-        // No trailing space at the end
-        return "test";
-
-    
+        if (times <= 0) return "";
+        StringBuilder result = new StringBuilder();
+        int count = 0;
+        while (count < times) {
+            result.append(word);
+            if (count < times - 1) {
+                result.append(" ");
+            }
+            count++;
+        }
+        return result.toString();
     }
     
     /**
@@ -39,16 +45,22 @@ public class Assignment {
      * 333
      */
     public static String createPyramid(int maxNumber) {
-        // TODO: Implement this method
-        // Use nested while loops:
-        // - Outer loop for each row
-        // - Inner loop to repeat the number
-        // Use \n for newlines
-        return "";
+        if (maxNumber <= 0) return "";
+        StringBuilder result = new StringBuilder();
+        int num = 1;
+        while (num <= maxNumber) {
+            int count = 0;
+            while (count < num) {
+                result.append(num);
+                count++;
+            }
+            if (num < maxNumber) {
+                result.append("\n");
+            }
+            num++;
+        }
+        return result.toString();
     }
-    
- 
-    
     
     /**
      * Exercise 3: Counting Game
@@ -59,13 +71,24 @@ public class Assignment {
      * Example: countTo(6) → "1 2 Fizz 4 Buzz Fizz"
      */
     public static String countTo(int maxNumber) {
-        // TODO: Implement this method
-        // Use a while loop
-        // Use string concatenation
-        // Numbers/words should be separated by spaces
-        // No trailing space at the end
-        return "";
+        if (maxNumber <= 0) return "";
+        StringBuilder result = new StringBuilder();
+        int num = 1;
+        while (num <= maxNumber) {
+            if (num % 3 == 0 && num % 5 == 0) {
+                result.append("FizzBuzz");
+            } else if (num % 3 == 0) {
+                result.append("Fizz");
+            } else if (num % 5 == 0) {
+                result.append("Buzz");
+            } else {
+                result.append(num);
+            }
+            if (num < maxNumber) {
+                result.append(" ");
+            }
+            num++;
+        }
+        return result.toString();
     }
-    
-  
 }
